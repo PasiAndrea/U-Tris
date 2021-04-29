@@ -5,6 +5,7 @@
  */
 package triisconbot;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -22,13 +23,20 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     ActionEvent b1;
     /**
      * Creates new form TrisIA
+     * @param nome
      */
-    public TrisIA(String nome) {
+    public TrisIA(String nome, int tema) {
+        if(tema==0)
+            getContentPane().setBackground(Color.white);
+        if(tema==1)
+            getContentPane().setBackground(Color.black);
+        if(tema==2)
+            getContentPane().setBackground(Color.pink);
         initComponents();
         inizio= random.nextBoolean();
         int numero= random.nextInt(9);
         if(!inizio){
-            System.out.println("Inizia il bot");
+            System.out.println(":: Inizia il bot ::");
             i++;
             switch(numero){
                 case 0:
@@ -69,7 +77,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
                     break;
             }
         }
-        else System.out.println("Inizia "+nome);
+        else System.out.println(":: Inizia "+nome+" ::");
         setVisible(true);
     }
 
@@ -93,9 +101,12 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
         jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
+        setBounds(new java.awt.Rectangle(440, 75, 0, 0));
+        setResizable(false);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/triisconbot/X nera.png"))); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 255));
         jButton1.setPreferredSize(new java.awt.Dimension(200, 200));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +114,8 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 255));
         jButton2.setPreferredSize(new java.awt.Dimension(200, 200));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +124,8 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
         });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 0, 255));
         jButton3.setPreferredSize(new java.awt.Dimension(200, 200));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +133,8 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 0, 255));
         jButton4.setPreferredSize(new java.awt.Dimension(200, 200));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +142,8 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(0, 0, 255));
         jButton5.setPreferredSize(new java.awt.Dimension(200, 200));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +151,8 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(0, 0, 255));
         jButton6.setPreferredSize(new java.awt.Dimension(200, 200));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +160,8 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(0, 0, 255));
         jButton7.setPreferredSize(new java.awt.Dimension(200, 200));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +169,8 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(0, 0, 255));
         jButton8.setPreferredSize(new java.awt.Dimension(200, 200));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +178,8 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton9.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(0, 0, 255));
         jButton9.setPreferredSize(new java.awt.Dimension(200, 200));
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,6 +245,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         jButton3.setText("X");
+        jButton3.setForeground(Color.red);
         jButton3.setEnabled(false);
         actionPerformed(b1);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -233,6 +253,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         jButton1.setText("X");
+        jButton1.setForeground(Color.red);
         jButton1.setEnabled(false);
         actionPerformed(b1);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -240,6 +261,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         jButton2.setText("X");
+        jButton2.setForeground(Color.red);
         jButton2.setEnabled(false);
         actionPerformed(b1);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -247,6 +269,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         jButton4.setText("X");
+        jButton4.setForeground(Color.red);
         jButton4.setEnabled(false);
         actionPerformed(b1);
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -254,6 +277,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         jButton5.setText("X");
+        jButton5.setForeground(Color.red);
         jButton5.setEnabled(false);
         actionPerformed(b1);
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -261,6 +285,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         jButton6.setText("X");
+        jButton6.setForeground(Color.red);
         jButton6.setEnabled(false);
         actionPerformed(b1);
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -268,6 +293,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         jButton7.setText("X");
+        jButton7.setForeground(Color.red);
         jButton7.setEnabled(false);
         actionPerformed(b1);
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -275,6 +301,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         jButton8.setText("X");
+        jButton8.setForeground(Color.red);
         jButton8.setEnabled(false);
         actionPerformed(b1);
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -282,6 +309,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         jButton9.setText("X");
+        jButton9.setForeground(Color.red);
         jButton9.setEnabled(false);
         actionPerformed(b1);
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -305,6 +333,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
         if(jButton1.getText().equals("X")&&jButton4.getText().equals("X")&&jButton7.getText().equals("X")){
             JOptionPane.showMessageDialog(null, "X ha vinto");
             System.exit(0);
+            
         }
         else if(jButton2.getText().equals("X")&&jButton5.getText().equals("X")&&jButton8.getText().equals("X")){
             JOptionPane.showMessageDialog(null, "X ha vinto");

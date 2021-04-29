@@ -12,7 +12,8 @@ import javax.swing.JOptionPane;
  * @author apasi
  */
 public class Menù extends javax.swing.JFrame {
-
+    
+    int nTema=0;
     /**
      * Creates new form Menù
      */
@@ -39,6 +40,7 @@ public class Menù extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("1 VS IA");
@@ -50,6 +52,7 @@ public class Menù extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(19, 29, 39));
         jLabel1.setText("Tris pazzo sgravato");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -62,8 +65,13 @@ public class Menù extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("ONLINE");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chiaro", "Scuro" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chiaro", "scuro", "Unicorn" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -132,7 +140,7 @@ public class Menù extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if(!jTextField1.getText().equals(""))
-        new TrisIA(jTextField1.getText());
+        new TrisIA(jTextField1.getText(), nTema);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -141,13 +149,26 @@ public class Menù extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+        
+        if(jComboBox1.getSelectedItem().equals("Chiaro"))
+            nTema=0;
+        if(jComboBox1.getSelectedItem().equals("scuro"))
+            nTema=1;
+        if(jComboBox1.getSelectedItem().equals("Unicorn"))
+            nTema=2;
+        System.out.println(jComboBox1.getSelectedItem()+" "+nTema);    
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        System.out.println("Arrivederci");
+        System.out.println(":: Arrivederci ::");
         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        System.out.println(":: Coming soon... ::");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
