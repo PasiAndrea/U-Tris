@@ -123,7 +123,6 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 200)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 255));
         jButton3.setPreferredSize(new java.awt.Dimension(200, 200));
@@ -360,7 +359,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
             System.exit(0);
         }
         else if(jButton3.getText().equals("X")&&jButton5.getText().equals("X")&&jButton7.getText().equals("X")){
-            JOptionPane.showMessageDialog(null, "X ha vinto");
+            JOptionPane.showMessageDialog(null, "ha vinto");
             System.exit(0);
         }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

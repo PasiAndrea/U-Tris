@@ -139,8 +139,12 @@ public class Menù extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(!jTextField1.getText().equals(""))
-        new TrisIA(jTextField1.getText(), nTema);
+        if(!jTextField1.getText().equals("")&&jTextField1.getText().length()<34) {
+            new TrisIA(jTextField1.getText(), nTema);
+        }
+        else if(jTextField1.getText().length()>=34){
+            System.out.println(":: Hai un nome troppo lungo ::");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
