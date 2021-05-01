@@ -71,7 +71,7 @@ public class Menù extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chiaro", "scuro", "Unicorn" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chiaro", "Scuro", "Unicorno" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -156,9 +156,9 @@ public class Menù extends javax.swing.JFrame {
         
         if(jComboBox1.getSelectedItem().equals("Chiaro"))
             nTema=0;
-        if(jComboBox1.getSelectedItem().equals("scuro"))
+        if(jComboBox1.getSelectedItem().equals("Scuro"))
             nTema=1;
-        if(jComboBox1.getSelectedItem().equals("Unicorn"))
+        if(jComboBox1.getSelectedItem().equals("Unicorno"))
             nTema=2;
         System.out.println(jComboBox1.getSelectedItem()+" "+nTema);    
     }//GEN-LAST:event_jComboBox1ActionPerformed
