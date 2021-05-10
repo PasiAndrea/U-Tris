@@ -5,6 +5,8 @@
  */
 package triisconbot;
 
+import java.awt.Menu;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -145,6 +147,7 @@ public class Menù extends javax.swing.JFrame {
         else if(jTextField1.getText().length()>=34){
             System.out.println(":: Hai un nome troppo lungo ::");
         }
+        setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -160,7 +163,7 @@ public class Menù extends javax.swing.JFrame {
             nTema=1;
         if(jComboBox1.getSelectedItem().equals("Unicorno"))
             nTema=2;
-        System.out.println(jComboBox1.getSelectedItem()+" "+nTema);    
+        System.out.println(jComboBox1.getSelectedItem()+" "+nTema);
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
