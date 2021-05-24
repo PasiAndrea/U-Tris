@@ -5,6 +5,8 @@
  */
 package triisconbot;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author apasi
@@ -12,17 +14,17 @@ package triisconbot;
 public class Vittoria {
     public Vittoria(int numero){
         Menù menu= new Menù();
-        switch(numero){
+        switch(numero){ 
             case 1:
-                System.out.println(":: X ha vinto ::");
+                JOptionPane.showMessageDialog(null,"hai vinto ");
                 TrisIA.setDefaultLookAndFeelDecorated(false);
                 break;
             case 2:
-                System.out.println(":: O ha vinto ::");
+                JOptionPane.showMessageDialog(null,"Il bot ha vinto");
                 TrisIA.setDefaultLookAndFeelDecorated(false);
                 break;
             case 3:
-                System.out.println(":: Pareggio ::");
+                JOptionPane.showMessageDialog(null, "Pareggio");
                 TrisIA.setDefaultLookAndFeelDecorated(false);
                 break;
         }

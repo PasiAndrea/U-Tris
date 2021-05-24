@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
-import javax.swing.JOptionPane;
 
 public class TrisIA extends javax.swing.JFrame implements ActionListener{
     static Random random= new Random();
