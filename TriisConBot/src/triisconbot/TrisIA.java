@@ -9,11 +9,12 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     static Random random= new Random();
     static boolean controllo;
     static boolean inizio;
-    static int i=0;
+    static int i;
     static int n;
     ActionEvent b1;
     
     public TrisIA(String nome, int tema) {
+        i=0;
         if(tema==0)
             getContentPane().setBackground(Color.white);
         if(tema==1)
@@ -312,35 +313,35 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         controllo = false;
         if(jButton1.getText().equals("X")&&jButton4.getText().equals("X")&&jButton7.getText().equals("X")){
-            new Vittoria(n=1);
+            new Vittoria(1);
             this.dispose();
         }
         else if(jButton2.getText().equals("X")&&jButton5.getText().equals("X")&&jButton8.getText().equals("X")){
-            new Vittoria(n=1);
+            new Vittoria(1);
             this.dispose();
         }
         else if(jButton3.getText().equals("X")&&jButton6.getText().equals("X")&&jButton9.getText().equals("X")){
-            new Vittoria(n=1);
+            new Vittoria(1);
             this.dispose();
         }
         else if(jButton1.getText().equals("X")&&jButton2.getText().equals("X")&&jButton3.getText().equals("X")){
-            new Vittoria(n=1);
+            new Vittoria(1);
             this.dispose();
         }
         else if(jButton4.getText().equals("X")&&jButton5.getText().equals("X")&&jButton6.getText().equals("X")){
-            new Vittoria(n=1);
+            new Vittoria(1);
             this.dispose();
         }
         else if(jButton7.getText().equals("X")&&jButton8.getText().equals("X")&&jButton9.getText().equals("X")){
-            new Vittoria(n=1);
+            new Vittoria(1);
             this.dispose();
         }
         else if(jButton1.getText().equals("X")&&jButton5.getText().equals("X")&&jButton9.getText().equals("X")){
-            new Vittoria(n=1);
+            new Vittoria(1);
             this.dispose();
         }
         else if(jButton3.getText().equals("X")&&jButton5.getText().equals("X")&&jButton7.getText().equals("X")){
-            new Vittoria(n=1);
+            new Vittoria(1);
             this.dispose();
         }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -348,7 +349,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
         
         //Il giocatore come prima scelta, sceglie la casella in centro, alla prima mossa.
         if(jButton5.getText().equals("X")&&i==0){
-            int n= random.nextInt(8);
+            n= random.nextInt(8);
             switch(n){
                 case 0:
                     jButton1.setText("O");
@@ -396,7 +397,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
         
         //il giocatore sceglie un angolo alla prima mossa.
         if((jButton1.getText().equals("X")||jButton3.getText().equals("X")||jButton7.getText().equals("X")||jButton9.getText().equals("X"))&&i==0){
-            int n= random.nextInt(5);
+            n= random.nextInt(5);
             switch(n){
                 case 0:
                     jButton2.setText("O");
@@ -429,7 +430,7 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
         
         //il giocatore sceglie un lato alla prima mossa.
         if((jButton2.getText().equals("X")||jButton4.getText().equals("X")||jButton6.getText().equals("X")||jButton8.getText().equals("X"))&&i==0){
-            int n= random.nextInt(5);
+            n= random.nextInt(5);
             switch(n){
                 case 0:
                     jButton1.setText("O");
@@ -464,959 +465,479 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
         //Riga 1;
         if(i==1){
             if(jButton1.getText().equals("O")&&jButton2.getText().equals("O")&&jButton3.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton3.getText().equals("")){
                     jButton3.setText("O");
                     jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 1 reverse;
             else if(jButton3.getText().equals("O")&&jButton2.getText().equals("O")&&jButton1.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton1.getText().equals("")){
                     jButton1.setText("O");
                     jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //riga 1 M
             else if(jButton3.getText().equals("O")&&jButton1.getText().equals("O")&&jButton2.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton2.getText().equals("")){
                     jButton2.setText("O");
                     jButton2.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton8.getText().equals("")){
-                    jButton8.setText("O");
-                    jButton8.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton5.getText().equals("")){
-                    jButton5.setText("O");
-                    jButton5.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 2;
             else if(jButton4.getText().equals("O")&&jButton5.getText().equals("O")&&jButton6.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton6.getText().equals("")){
                     jButton6.setText("O");
                     jButton6.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 2 reverse;
             else if(jButton6.getText().equals("O")&&jButton5.getText().equals("O")&&jButton4.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton4.getText().equals("")){
                     jButton4.setText("O");
                     jButton4.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    i++;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //riga 2 M
             else if(jButton4.getText().equals("O")&&jButton6.getText().equals("O")&&jButton5.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton5.getText().equals("")){
                     jButton5.setText("O");
                     jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton2.getText().equals("")){
-                    jButton2.setText("O");
-                    jButton2.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton8.getText().equals("")){
-                    jButton8.setText("O");
-                    jButton8.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 3;
             else if(jButton7.getText().equals("O")&&jButton8.getText().equals("O")&&jButton9.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton9.getText().equals("")){
                     jButton9.setText("O");
                     jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 3 reverse;
             else if(jButton9.getText().equals("O")&&jButton8.getText().equals("O")&&jButton7.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton7.getText().equals("")){
                     jButton7.setText("O");
                     jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //riga 3 M
             else if(jButton7.getText().equals("O")&&jButton9.getText().equals("O")&&jButton8.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton8.getText().equals("")){
                     jButton8.setText("O");
                     jButton8.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton5.getText().equals("")){
-                    jButton5.setText("O");
-                    jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton2.getText().equals("")){
-                    jButton2.setText("O");
-                    jButton2.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 1;
             else if(jButton1.getText().equals("O")&&jButton4.getText().equals("O")&&jButton7.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton7.getText().equals("")){
                     jButton7.setText("O");
                     jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 1 reverse;
             else if(jButton7.getText().equals("O")&&jButton4.getText().equals("O")&&jButton1.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton1.getText().equals("")){
                     jButton1.setText("O");
                     jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 1 M
             else if(jButton1.getText().equals("O")&&jButton7.getText().equals("O")&&jButton4.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton4.getText().equals("")){
                     jButton4.setText("O");
                     jButton4.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton5.getText().equals("")){
-                    jButton5.setText("O");
-                    jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton6.getText().equals("")){
-                    jButton6.setText("O");
-                    jButton6.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 2;
             else if(jButton2.getText().equals("O")&&jButton5.getText().equals("O")&&jButton8.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton8.getText().equals("")){
                     jButton8.setText("O");
                     jButton8.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 2 reverse;
             else if(jButton8.getText().equals("O")&&jButton5.getText().equals("O")&&jButton2.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton2.getText().equals("")){
                     jButton2.setText("O");
                     jButton2.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 2 M
             else if(jButton2.getText().equals("O")&&jButton8.getText().equals("O")&&jButton5.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton5.getText().equals("")){
                     jButton5.setText("O");
                     jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton4.getText().equals("")){
-                    jButton4.setText("O");
-                    jButton4.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton6.getText().equals("")){
-                    jButton6.setText("O");
-                    jButton6.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 3;
             else if(jButton3.getText().equals("O")&&jButton6.getText().equals("O")&&jButton9.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton9.getText().equals("")){
                     jButton9.setText("O");
                     jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 3 reverse;
             else if(jButton9.getText().equals("O")&&jButton6.getText().equals("O")&&jButton3.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton3.getText().equals("")){
                     jButton3.setText("O");
                     jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 3 M
             else if(jButton3.getText().equals("O")&&jButton9.getText().equals("O")&&jButton6.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton6.getText().equals("")){
                     jButton6.setText("O");
                     jButton6.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton5.getText().equals("")){
-                    jButton5.setText("O");
-                    jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton4.getText().equals("")){
-                    jButton4.setText("O");
-                    jButton4.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 1
             else if(jButton1.getText().equals("O")&&jButton5.getText().equals("O")&&jButton9.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton9.getText().equals("")){
                     jButton9.setText("O");
                     jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 1 reverse;
             else if(jButton9.getText().equals("O")&&jButton5.getText().equals("O")&&jButton1.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton1.getText().equals("")){
                     jButton1.setText("O");
                     jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 1 M
             else if(jButton1.getText().equals("O")&&jButton9.getText().equals("O")&&jButton5.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton5.getText().equals("")){
                     jButton5.setText("O");
                     jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 2
             else if(jButton3.getText().equals("O")&&jButton5.getText().equals("O")&&jButton7.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton7.getText().equals("")){
                     jButton7.setText("O");
                     jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 2 reverse;
             else if(jButton7.getText().equals("O")&&jButton5.getText().equals("O")&&jButton3.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton3.getText().equals("")){
                     jButton3.setText("O");
                     jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 2 M
             else if(jButton3.getText().equals("O")&&jButton7.getText().equals("O")&&jButton5.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton5.getText().equals("")){
                     jButton5.setText("O");
                     jButton5.setEnabled(false);
                     controllo=true;
                 }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
-                    controllo=true;
-                }
             }
             //Riga 1;
             else if(jButton1.getText().equals("X")&&jButton2.getText().equals("X")&&jButton3.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton3.getText().equals("")){
                     jButton3.setText("O");
                     jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 1 reverse;
             else if(jButton3.getText().equals("X")&&jButton2.getText().equals("X")&&jButton1.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton1.getText().equals("")){
                     jButton1.setText("O");
                     jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //riga 1 M
             else if(jButton3.getText().equals("X")&&jButton1.getText().equals("X")&&jButton2.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton2.getText().equals("")){
                     jButton2.setText("O");
                     jButton2.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton8.getText().equals("")){
-                    jButton8.setText("O");
-                    jButton8.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton5.getText().equals("")){
-                    jButton5.setText("O");
-                    jButton5.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 2;
             else if(jButton4.getText().equals("X")&&jButton5.getText().equals("X")&&jButton6.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton6.getText().equals("")){
                     jButton6.setText("O");
                     jButton6.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 2 reverse;
             else if(jButton6.getText().equals("X")&&jButton5.getText().equals("X")&&jButton4.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton4.getText().equals("")){
                     jButton4.setText("O");
                     jButton4.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    i++;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //riga 2 M
             else if(jButton4.getText().equals("X")&&jButton6.getText().equals("X")&&jButton5.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton5.getText().equals("")){
                     jButton5.setText("O");
                     jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton2.getText().equals("")){
-                    jButton2.setText("O");
-                    jButton2.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton8.getText().equals("")){
-                    jButton8.setText("O");
-                    jButton8.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 3;
             else if(jButton7.getText().equals("X")&&jButton8.getText().equals("X")&&jButton9.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton9.getText().equals("")){
                     jButton9.setText("O");
                     jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //Riga 3 reverse;
             else if(jButton9.getText().equals("X")&&jButton8.getText().equals("X")&&jButton7.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton7.getText().equals("")){
                     jButton7.setText("O");
                     jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //riga 3 M
             else if(jButton7.getText().equals("X")&&jButton9.getText().equals("X")&&jButton8.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton8.getText().equals("")){
                     jButton8.setText("O");
                     jButton8.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton5.getText().equals("")){
-                    jButton5.setText("O");
-                    jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton2.getText().equals("")){
-                    jButton2.setText("O");
-                    jButton2.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 1;
             else if(jButton1.getText().equals("X")&&jButton4.getText().equals("X")&&jButton7.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton7.getText().equals("")){
                     jButton7.setText("O");
                     jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 1 reverse;
             else if(jButton7.getText().equals("X")&&jButton4.getText().equals("X")&&jButton1.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton1.getText().equals("")){
                     jButton1.setText("O");
                     jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 1 M
             else if(jButton1.getText().equals("X")&&jButton7.getText().equals("X")&&jButton4.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton4.getText().equals("")){
                     jButton4.setText("O");
                     jButton4.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton5.getText().equals("")){
-                    jButton5.setText("O");
-                    jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton6.getText().equals("")){
-                    jButton6.setText("O");
-                    jButton6.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 2;
             else if(jButton2.getText().equals("X")&&jButton5.getText().equals("X")&&jButton8.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton8.getText().equals("")){
                     jButton8.setText("O");
                     jButton8.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 2 reverse;
             else if(jButton8.getText().equals("X")&&jButton5.getText().equals("X")&&jButton2.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton2.getText().equals("")){
                     jButton2.setText("O");
                     jButton2.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 2 M
             else if(jButton2.getText().equals("X")&&jButton8.getText().equals("X")&&jButton5.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton5.getText().equals("")){
                     jButton5.setText("O");
                     jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton4.getText().equals("")){
-                    jButton4.setText("O");
-                    jButton4.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton6.getText().equals("")){
-                    jButton6.setText("O");
-                    jButton6.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 3;
             else if(jButton3.getText().equals("X")&&jButton6.getText().equals("X")&&jButton9.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton9.getText().equals("")){
                     jButton9.setText("O");
                     jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 3 reverse;
             else if(jButton9.getText().equals("X")&&jButton6.getText().equals("X")&&jButton3.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton3.getText().equals("")){
                     jButton3.setText("O");
                     jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //colonna 3 M
             else if(jButton3.getText().equals("X")&&jButton9.getText().equals("X")&&jButton6.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton6.getText().equals("")){
                     jButton6.setText("O");
                     jButton6.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton5.getText().equals("")){
-                    jButton5.setText("O");
-                    jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton4.getText().equals("")){
-                    jButton4.setText("O");
-                    jButton4.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 1
             else if(jButton1.getText().equals("X")&&jButton5.getText().equals("X")&&jButton9.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton9.getText().equals("")){
                     jButton9.setText("O");
                     jButton9.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 1 reverse;
             else if(jButton9.getText().equals("X")&&jButton5.getText().equals("X")&&jButton1.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton1.getText().equals("")){
                     jButton1.setText("O");
                     jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 1 M
             else if(jButton1.getText().equals("X")&&jButton9.getText().equals("X")&&jButton5.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton5.getText().equals("")){
                     jButton5.setText("O");
                     jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton3.getText().equals("")){
-                    jButton3.setText("O");
-                    jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton7.getText().equals("")){
-                    jButton7.setText("O");
-                    jButton7.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 2
             else if(jButton3.getText().equals("X")&&jButton5.getText().equals("X")&&jButton7.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton7.getText().equals("")){
                     jButton7.setText("O");
                     jButton7.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 2 reverse;
             else if(jButton7.getText().equals("X")&&jButton5.getText().equals("X")&&jButton3.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton3.getText().equals("")){
                     jButton3.setText("O");
                     jButton3.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
 
             //diagonale 2 M
             else if(jButton3.getText().equals("X")&&jButton7.getText().equals("X")&&jButton5.getText().equals("")){
-                int n= random.nextInt(10);
+                n= random.nextInt(10);
                 if(n!=1&&jButton5.getText().equals("")){
                     jButton5.setText("O");
                     jButton5.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton1.getText().equals("")){
-                    jButton1.setText("O");
-                    jButton1.setEnabled(false);
-                    controllo=true;
-                }
-                else if(jButton9.getText().equals("")){
-                    jButton9.setText("O");
-                    jButton9.setEnabled(false);
                     controllo=true;
                 }
             }
@@ -1465,57 +986,57 @@ public class TrisIA extends javax.swing.JFrame implements ActionListener{
         //COLONNE
         //colonna 1
         if(jButton1.getText().equals("O")&&jButton4.getText().equals("O")&&jButton7.getText().equals("O")){
-            new Vittoria(n=2);
+            new Vittoria(2);
             this.dispose();
         }
         
         //colonna 2
         else if(jButton2.getText().equals("O")&&jButton5.getText().equals("O")&&jButton8.getText().equals("O")){
-            new Vittoria(n=2);
+            new Vittoria(2);
             this.dispose();
         }
         
         //colonna 3
         else if(jButton3.getText().equals("O")&&jButton6.getText().equals("O")&&jButton9.getText().equals("O")){
-            new Vittoria(n=2);
+            new Vittoria(2);
             this.dispose();
         }
         
         //RIGHE
         //riga 1
         else if(jButton1.getText().equals("O")&&jButton2.getText().equals("O")&&jButton3.getText().equals("O")){
-            new Vittoria(n=2);
+            new Vittoria(2);
             this.dispose();
         }
         
         //riga 2
         else if(jButton4.getText().equals("O")&&jButton5.getText().equals("O")&&jButton6.getText().equals("O")){
-            new Vittoria(n=2);
+            new Vittoria(2);
             this.dispose();
         }
         
         //riga 3
         else if(jButton7.getText().equals("O")&&jButton8.getText().equals("O")&&jButton9.getText().equals("O")){
-            new Vittoria(n=2);
+            new Vittoria(2);
             this.dispose();
         }
         
         //DIAGONALI
         //diagonale 1 dx a sx
         else if(jButton1.getText().equals("O")&&jButton5.getText().equals("O")&&jButton9.getText().equals("O")){
-            new Vittoria(n=2);
+            new Vittoria(2);
             this.dispose();
         }
         //diagonale 2 sx a ds
         else if(jButton3.getText().equals("O")&&jButton5.getText().equals("O")&&jButton7.getText().equals("O")){
-            new Vittoria(n=2);
+            new Vittoria(2);
             this.dispose();
         }
         //Caso di pareggio
         else if(!jButton1.getText().equals("")&&!jButton2.getText().equals("")&&!jButton3.getText().equals("")
                 &&!jButton4.getText().equals("")&&!jButton5.getText().equals("")&&!jButton6.getText().equals("")
                 &&!jButton7.getText().equals("")&&!jButton8.getText().equals("")&&!jButton9.getText().equals("")){
-            new Vittoria(n=3);
+            new Vittoria(3);
             this.dispose();
         }
     }
