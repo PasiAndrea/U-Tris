@@ -12,11 +12,12 @@ public class Online extends javax.swing.JFrame {
     ServerTris server;
     ClientTris client;
     static String stringaPosizione = "0";
-    Griglia griglia; 
+    static Griglia griglia;
     
     public Online() {
         initComponents();
         setVisible(true);
+        griglia = new Griglia();
     }
 
     @SuppressWarnings("unchecked")
@@ -110,25 +111,25 @@ public class Online extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextActionPerformed
 
     private void buttonClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClientActionPerformed
-        griglia = new Griglia();
         server = new ServerTris();
         Server();
-        
     }//GEN-LAST:event_buttonClientActionPerformed
 
     // ---------------------------------------------------
-    void inizio(){
-        boolean inizio= random.nextBoolean();
-        //
-        if(inizio){
-        }
-        else{
-        }
-
+    /*void inizio(){
+    boolean inizio= random.nextBoolean();
+    //
+    if(inizio){
+    inizio = false;
+    }
+    else{
+    inizio = true;
     }
     
+    }*/
+    
     void Server(){
-        
+        griglia.jLabel1.setText("Connesso");
         String posizione;
         //server = new ServerTris();
         posizione=server.letturaClient();
@@ -183,7 +184,7 @@ public class Online extends javax.swing.JFrame {
                     griglia.jButton9.setEnabled(false);
                     break;
             }
-            while("".equals(Griglia.posizione)){
+            while("".equals(posizione)){
                 posizione = griglia.posizione;
                 server.scritturaClient(posizione);
             }
@@ -193,6 +194,7 @@ public class Online extends javax.swing.JFrame {
     }
     
     void Client(){
+        griglia.jLabel1.setText("Connesso");
         String s=null;
         //client = new ClientTris(jLabel1.getText());
         s=sc.nextLine();
@@ -206,10 +208,4 @@ public class Online extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jText;
     // End of variables declaration//GEN-END:variables
-
-    private void paintComponents(Griglia griglia) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
 }

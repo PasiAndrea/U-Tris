@@ -1,7 +1,6 @@
 package trisproject;
 
 import java.awt.Color;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -318,34 +317,42 @@ public class Bot extends javax.swing.JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         controllo = false;
+        //colonna1
         if(jButton1.getText().equals("X")&&jButton4.getText().equals("X")&&jButton7.getText().equals("X")){
             Vittoria(0);
             this.dispose();
         }
+        //colonna2
         else if(jButton2.getText().equals("X")&&jButton5.getText().equals("X")&&jButton8.getText().equals("X")){
             Vittoria(0);
             this.dispose();
         }
+        //colonna3
         else if(jButton3.getText().equals("X")&&jButton6.getText().equals("X")&&jButton9.getText().equals("X")){
             Vittoria(0);
             this.dispose();
         }
+        //riga1
         else if(jButton1.getText().equals("X")&&jButton2.getText().equals("X")&&jButton3.getText().equals("X")){
             Vittoria(0);
             this.dispose();
         }
+        //riga2
         else if(jButton4.getText().equals("X")&&jButton5.getText().equals("X")&&jButton6.getText().equals("X")){
             Vittoria(0);
             this.dispose();
         }
+        //riga3
         else if(jButton7.getText().equals("X")&&jButton8.getText().equals("X")&&jButton9.getText().equals("X")){
             Vittoria(0);
             this.dispose();
         }
+        //diagonale1
         else if(jButton1.getText().equals("X")&&jButton5.getText().equals("X")&&jButton9.getText().equals("X")){
             Vittoria(0);
             this.dispose();
         }
+        //diagonale2
         else if(jButton3.getText().equals("X")&&jButton5.getText().equals("X")&&jButton7.getText().equals("X")){
             Vittoria(0);
             this.dispose();
@@ -1050,18 +1057,17 @@ public class Bot extends javax.swing.JFrame implements ActionListener{
     public void Vittoria(int numero){
         switch(numero){ 
             case 0:
-                JOptionPane.showMessageDialog(null,"hai vinto ");
                 i=0;
+                JOptionPane.showMessageDialog(null,"hai vinto ");
                 setDefaultLookAndFeelDecorated(false);
                 break;
             case 1:
-                JOptionPane.showMessageDialog(null,"Il bot ha vinto");
                 i=0;
                 setDefaultLookAndFeelDecorated(false);
                 break;
             case 2:
-                JOptionPane.showMessageDialog(null, "Pareggio");
                 i=0;
+                JOptionPane.showMessageDialog(null, "Pareggio");
                 setDefaultLookAndFeelDecorated(false);
                 break;
         }
