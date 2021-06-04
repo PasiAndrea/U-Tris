@@ -17,7 +17,6 @@ public class Online extends javax.swing.JFrame {
     public Online() {
         initComponents();
         setVisible(true);
-        
     }
 
     @SuppressWarnings("unchecked")
